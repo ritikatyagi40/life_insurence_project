@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master1.master.cs" Inherits="life_insurence_project.master1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <div class="container" style="width: 100%">
+            <div class="row" style="width: 102%; border-style: none; height: 92px; background-color: white;">
+                <div class="col-md-3" style="width: 36%;">
+                    <img src="images/logo1.png" width="30%" height="50px" align="top">
+                </div>
+                <div class="col-md-1" style="width: 7%; margin-top: 7px;">
+                </div>
+                <div class="col-md-1" style="width: 7%; margin-top: 7px;">
+                </div>
+                <div class="col-md-4" style="width: 41%;">
+                    <div class="input-group" style="margin-top: 7px; margin-left: 219px;">
+                        <span class="input-group-addon" style="border-color: black; background-color: #080e0be3;"><i><i class="fa fa-search" aria-hidden="true" style="color: white;"></i></i></span>
+                        <input id="uid" type="text" class="form-control" name="uid" placeholder="Search" style="height: 35px; background-color: white; width: 406px; border-color: black;" />
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-1" style="width: 9%; margin-top: 7px;">
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------------------------->
+        <!----------------------------------- second row-------------------------------------->
+        <div class="container" width="100%">
+            <center>
+
+
+
+
+
+                <div class="row" style="width: 100%; height: 65px; background-color: #1c1c9d; margin-top: -27px;">
+                    <div class="col-md-3" style="width: 20%; color: white; margin-top: 15px;">
+                        <i class="fa fa-home fa-2x" aria-hidden="true "></i>
+                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Size="X-Large" ForeColor="White" OnClick="LinkButton1_Click" PostBackUrl="~/admin_panel_home.aspx">Home</asp:LinkButton>
+                    </div>
+                    <div class="col-md-3" style="width: 20%; margin-top: 15px;">
+                        <i class="fa fa-phone-square fa-2x" aria-hidden="true" style="color: white;"></i>
+                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Size="X-Large" ForeColor="White" OnClick="LinkButton2_Click">Reset Pass</asp:LinkButton>
+                    </div>
+                    <div class="col-md-3" style="width: 20%; color: white; margin-top: 15px;">
+                        <i class="fa fa-address-book  fa-2x" aria-hidden="true"></i>
+                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Size="X-Large" ForeColor="White" OnClick="LinkButton3_Click" PostBackUrl="~/manage_user.aspx">Manage User</asp:LinkButton>
+                    </div>
+                    <div class="col-md-3" style="width: 20%; color: white; margin-top: 15px;">
+                        <i class="fa fa-sticky-note fa-2x" aria-hidden="true"></i>
+                        <asp:LinkButton ID="LinkButton4" runat="server" Font-Size="X-Large" ForeColor="White" OnClick="LinkButton4_Click">Manage Article</asp:LinkButton>
+                    </div>
+                    <div class="col-md-3" style="width: 20%; color: white;">
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="row" style="width: 100%; height: 10px;"></div>
+        <div class="row" style="width: 100%; height: 500px;">
+            <div class="col-md-3" style="background-color: white; width: 16%">
+                <h2 style="color: #1c1c9d; margin-left: 33px; font-weight: 700;">Admin panel </h2>
+                <image src="images//logo.png" height="150px" width="150px" style="border-radius: 77px; margin-left: 36px; border: 4px solid #3F51B5;"></image>
+                <br />
+                <br />
+                <asp:Button ID="Button1" runat="server" Text="PRODUCT TYPE " Width="237px" Style="background-color: #3F51B5; color: white; box-shadow: 2px 2px grey; height: 50px;"
+                    OnClick="Button1_Click" Font-Bold="True" Font-Underline="True" />
+                <br />
+                <asp:Button ID="Button2" runat="server" Text="Add Product " Width="237px" Style="background-color: #3399FF; color: white; box-shadow: 2px 2px grey;"
+                    OnClick="Button2_Click" Height="30px" PostBackUrl="~/add_product.aspx" />
+                <br />
+                <asp:Button ID="Button3" runat="server" Text="View Product" Width="237px" Style="background-color: #3399FF; color: white; box-shadow: 2px 2px grey; height: 30px;"
+                    OnClick="Button3_Click" PostBackUrl="~/admin_view_product.aspx" />
+                <br />
+                <asp:Button ID="Button4" runat="server" Text="SUB PRODUCT " Width="237px" Style="background-color: #3F51B5; color: white; box-shadow: 2px 2px grey; height: 50px;"
+                    OnClick="Button4_Click" Font-Bold="True" Font-Underline="True" />
+                <br />
+                <asp:Button ID="Button5" runat="server" Text="Add Sub-Product" Width="237px" Style="background-color: #3399FF; color: white; box-shadow: 2px 2px grey; height: 30px;"
+                    OnClick="Button5_Click" PostBackUrl="~/admin_add_sub_product.aspx" />
+                <br />
+                <asp:Button ID="Button6" runat="server" Text="View Sub-Product" Width="237px" Style="background-color: #3399FF; color: white; box-shadow: 2px 2px grey; height: 30px;"
+                    OnClick="Button6_Click" PostBackUrl="~/admin_view_sub_product.aspx" />
+                <br />
+                <asp:Button ID="Button7" runat="server" Width="237px" Style="background-color: #3F51B5; color: white; box-shadow: 2px 2px grey;"
+                    OnClick="Button7_Click" Font-Bold="True" Font-Underline="True" Height="42px" Text="VIEW AGENT REQUEST " PostBackUrl="~/admin_view_agent.aspx" />
+                <br />
+                <asp:Button ID="Button8" runat="server" Width="237px" Style="background-color: #3F51B5; color: white; box-shadow: 2px 2px grey;"
+                    OnClick="Button7_Click" Font-Bold="True" Font-Underline="True" Height="42px" Text="VIEW FEEDBACK " PostBackUrl="~/admin_view_feedback.aspx" />
+                <br />
+                <asp:Button ID="Button9" runat="server" Width="237px" Style="background-color: #3F51B5; color: white; box-shadow: 2px 2px grey;"
+                    OnClick="Button7_Click" Font-Bold="True" Font-Underline="True" Height="42px" Text="LOGOUT " PostBackUrl="~/main_page.aspx" />
+            </div>
+
+            <div class="col-md-9" style="height: 500px; width: 84%">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row" style="width: 100%; height: 100px;"></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+create table feedback(name varchar(50) , email varchar(50) , is_first_time_visit varchar(10) , message varchar(150))
+
+--- insert  product procedure 
+
+Create procedure pro( @title varchar(50) , @description varchar(250) , @photo image)
+as begin 
+insert into product values ( @title, @description , @photo )
+end
+select * from sub_product
+
+---  insert sub product procedure 
+Create procedure  sub_prod(@category varchar(50),@type varchar(50) , @description varchar(250) , @photo image)
+as begin 
+insert into sub_product values ( @category, @type , @description , @photo )
+end
+select * from product
+
+----------------------- table agent 
+create table agent ( name varchar(50) , address varchar(200), mobile varchar(10), email varchar(50), product varchar(50))
+
+-- procedure
+Create procedure agent_inset( @name varchar(50) , @address varchar(250) , @mobile varchar(10), @email varchar(50), @product varchar(50))
+as begin 
+insert into agent values (@name , @address , @mobile , @email , @product )
+end
+=---
+----------------------- table : policy
+create table tblpolicydetails(
+policynumber varchar(20) primary key,
+insuredID int ,
+insurer varchar(50),
+tpa varchar(50) ,
+typeofcover varchar(30) not null,
+effectivedate datetime not null,
+expirydate datetime not null,
+premiumrate numeric(10,2),
+premiummode varchar(30),
+maternity varchar(1),
+babycover varchar(1),
+babycoverdaysstart numeric(3),
+prehospidays numeric(1) not null,
+posthospidays numeric(1) not null,
+policymax numeric(10,2) not null,
+policydeductible numeric(10,2) not null
+)
+select * from tblpolicydetails
+--------------- table : medical 
+create table tblmedicalhistory(
+sno int primary key,
+insuredID int,
+ddate datetime not null,
+disease varchar(100) not null
+)
+select * from tblInsured
+insert into tblmedicalhistory values(2, 10404, '2022-09-12' , 'HIV')
+-----------------------
+insert into tblpolicydetails values(101,10404,'Manojit chakraborty' , 'tpa1','full','2023-01-01','2023-01-01',2,'quaterly','y','y',0,9,9,100,10)
+select * from tblmedicalhistory
+select * from tblpolicydetails
+select * from  tblpolicymaximums
+select * from tblInsured;
+-------------------------- table : policy maximums 
+create table tblpolicymaximums(
+policynumber varchar(20),
+opmax numeric(10,2),
+ambulancemax numeric(10,2),
+checkupmax numeric(10,2),
+roommax numeric(10,2),
+nursing numeric(10,2),
+icumax numeric(10,2),
+operatingroommax numeric(10,2),
+doctorchargesmax numeric(10,2),
+drugsmax numeric(10,2),
+investigationmax numeric(10,2),
+diagmax numeric(10,2),
+consumablesmax numeric(10,2),
+othersmax numeric(10,2)
+)
+insert into tblpolicymaximums values(101, 10000, 5000, 500, 1500, 2000, 8000, 1000, 8000, 1500, 800, 500, 600, 400);
+select * from tblpolicymaximums;
